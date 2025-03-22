@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-//
-function card({ country }) {
+
+function Card({ country }) {
   return (
     <div className="row">
       {country.map((item, index) => (
@@ -43,4 +43,4 @@ function card({ country }) {
   );
 }
 
-export default card;
+export default Card;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Card from "./Components/card";
+import Card from "./Components/Card";
 import Navbar from "./Components/Navbar";
 import Searchbar from "./Components/Searchbar";
 import Dropdown from "./Components/Dropdown";
