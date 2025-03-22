@@ -1,0 +1,8 @@
+.bold-font{
+    font-weight:bold ;
+}
+.flagimagesize{
+    height:140px;
+    object-fit: cover;
+
+}
