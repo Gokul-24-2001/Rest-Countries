@@ -1,9 +1,22 @@
-import React from 'react'
+  import React from "react";
+  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+  function Searchbar() {
+    return (
+      <div>
+        <input
+          className="input"
+          placeholder="Search ..."
+          type="search"
+          id="search-country"
+          name="search-country"
+        ></input>
+        {/* <p>
+        
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </p> */}
+      </div>
+    );
+  }
 
-function Searchbar() {
-  return (
-    <div><input className='input' type="search"  id="search-country" name="search-country"></input></div>
-  )
-}
-
-export default Searchbar
+  export default Searchbar;

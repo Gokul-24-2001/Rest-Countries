@@ -17,23 +17,23 @@
   background-color: white;
   color: black;
 }
-.dropdown{
 
- display: flex;
- justify-content: flex-end;  
-}
-.dropdown select{
-    height: 55px;
-    width: 200px;
-  margin-right: 200px;
-  background-color:rgba(0, 0, 0, 0.317);
-  border-radius: .4rem;
+.dropdown select {
+  height: 60px;
+  width: 250px;
+  border-radius: 0.4rem;
   outline: none;
-
+  padding: 15px;
+  border-width: 3px;
+  border-color: rgb(243, 241, 241);
+  font-size: 18px;;
 }
-.input{
-    height: 55px;
-    width: 200px;
-    display: block;
-    
+.input {
+  height: 60px;
+  width: 250px;
+  display: block;
+  border-radius: 0.4rem;
+  padding: 15px;
+  border-width: 3px;
+  border-color: rgb(236, 233, 233);
 }
