@@ -1,8 +1,39 @@
-.bold-font{
-    font-weight:bold ;
+.bold-font {
+  font-weight: bold;
 }
-.flagimagesize{
-    height:140px;
-    object-fit: cover;
+.flagimagesize {
+  height: 140px;
+  object-fit: cover;
+}
+.button-style span {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 17px;
+}
+.dark {
+  background-color: rgba(0, 0, 0, 0.792);
+  color: white;
+}
+.light {
+  background-color: white;
+  color: black;
+}
+.dropdown{
 
+ display: flex;
+ justify-content: flex-end;  
+}
+.dropdown select{
+    height: 55px;
+    width: 200px;
+  margin-right: 200px;
+  background-color:rgba(0, 0, 0, 0.317);
+  border-radius: .4rem;
+  outline: none;
+
+}
+.input{
+    height: 55px;
+    width: 200px;
+    display: block;
+    
 }
