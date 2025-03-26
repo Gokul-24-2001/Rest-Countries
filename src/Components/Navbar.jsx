@@ -3,22 +3,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 function Navbar({ theme, togglebutton }) {
   return (
-    <nav className={`navbar fs-5 d-flex flex-row mx-6 px-4 py-4 ${theme}`}>
-      <div className="px-5 fs-4">
+    <div>
+    <nav className={`navbar p-4 z-1 position-fixed w-100 ${theme} fs-4`}>
+      <div className="px-5 mx-5">
         <b>Where is the World?</b>
       </div>
-
-      <div className="px-5 fs-4">
+      <div className="px-5 mx-5"> 
         <button
           type="button"
           onClick={togglebutton}
           className={`button-style ${theme}`}
         >
-          <FontAwesomeIcon className={`${theme}`} icon={faMoon} />
-          <span className={`${theme}`}>Lightmode </span>
+          <FontAwesomeIcon  icon={faMoon} />
+         {theme=="light"?<span className="p-1">Lightmode </span>:<span className="p-1">Darkmode </span>} 
         </button>
       </div>
     </nav>
+    </div>
   );
 }
 

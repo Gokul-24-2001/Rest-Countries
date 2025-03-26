@@ -2,16 +2,16 @@ import React from "react";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Card({ country }) {
+function Card({ country,theme}) {   
   return (
-    <div className="row">
-      {country.map((item, index) => (
-        <div className="col-md-4  col-lg-3 col-sm-6 mb-3" >
-          <div key={"country" + index} className="card h-100 shadow">
-            <img className="card-img-top flagimagesize" src={item.flags.png} />
-            <div className="card-body">
-              <h5 className="card-title">{item.name.official}</h5>
-              <div className="card-text">
+    <div className={`row mt-5 p-5 px-5 ${theme}`}>
+      {country.map((item,index) => (
+        <div key={"country"+index} className="col-md-4 col-lg-3 col-sm-6 mb-3" >
+          <div className="card h-100 shadow">
+            <img className="card-img-top flagimagesize"alt={`${item.name.common} flag`}  src={item.flags.png} />
+            <div className={`card-body ${theme}`}>
+              <h5 className={`${theme}`}>{item.name.official}</h5>
+              <div className={`card-text ${theme}`}>
                 <div>
                   <label className="bold-font">Common Name:</label>
                   <label>{item.name.common}</label>
