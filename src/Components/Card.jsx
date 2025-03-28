@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Card({ country,theme}) {   
+function Card({country,theme}) {   
   return (
     <div className={`row mt-5 p-5 px-5 ${theme}`}>
       {country.map((item,index) => (
@@ -28,6 +28,10 @@ function Card({ country,theme}) {
                   <label className="bold-font">Sub Region:</label>
                   <label>{item.subregion}</label>
                 </div>
+                <div>
+                  <label className="bold-font">Continent:</label>
+                  <label>{item.continents}</label>
+                  </div>
                 <p>
                   <label className="bold-font">Geography:</label>
                   <label>

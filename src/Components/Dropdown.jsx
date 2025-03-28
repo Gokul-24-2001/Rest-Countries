@@ -1,14 +1,12 @@
 import React from "react";
 import Card from './Card'
 import { useState } from "react";
-function Dropdown({ country,theme,Region,togglebutton,filterregion,Card}) {
-  const[selecteditem,setSelectedItem]=useState("All")
+function Dropdown({theme,selecteditem,setSelectedItem,togglebutton,filterContinent}) {
   const handleFilter=(e)=>{
     setSelectedItem(e.target.value);
   } 
- 
    
- console.log(Region)
+//  console.log(Region)
     return (
     <div className="dropdown">
       <select
@@ -19,7 +17,7 @@ function Dropdown({ country,theme,Region,togglebutton,filterregion,Card}) {
         onChange={handleFilter}
       >
         <option value="All"> All</option>
-        {filterregion.map((item,index) => {
+        {filterContinent.map((item,index) => {
           return (
             <option
             key={index}

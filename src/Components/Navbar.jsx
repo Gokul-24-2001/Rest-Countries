@@ -4,7 +4,7 @@ import { faMoon } from "@fortawesome/free-solid-svg-icons";
 function Navbar({ theme, togglebutton }) {
   return (
     <div>
-    <nav className={`navbar p-4 z-1 position-fixed w-100 ${theme} fs-4`}>
+    <nav className={`navbar p-3 z-1 position-fixed w-100 ${theme} fs-4 nav1`}>
       <div className="px-5 mx-5">
         <b>Where is the World?</b>
       </div>
