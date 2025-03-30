@@ -30,26 +30,68 @@
 }
 
 .dropdown select {
-  height: 70px;
-  width: 250px;
   border-radius: 0.4rem;
   outline: none;
-  padding:17px;
+  padding: 20px 40px;
   border-width: 3px;
   border-color: rgb(243, 241, 241);
-  font-size: 18px;
+  font-size: 16px;
   /* margin-left: 300px; */
 }
 .input{
-  padding: 20px 45px;
+  padding: 20px 40px;
   border: none;
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
 }
-.search-dropdown-container{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 100px;
+@media (max-width:400px) {
+  .navbar {
+      flex-direction: column !important;
+      text-align: center;
+  }
+  .navbar .px-5 {
+      padding: 0!important;
+  }
+  .navbar .mx-5 {
+      margin: 0!important;
+  }
+  .button-style {
+      font-size: 12px;
+      padding:5px;
+  }
+  .input {
+    width: 90%;
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+@media (max-width:250px){
+  .navbar {
+    flex-direction: column !important;
+    text-align: center;
+}
+.navbar .px-5 {
+    padding: 0!important;
+}
+.navbar .mx-5 {
+    margin: 0!important;
+}
+.button-style {
+    font-size: 12px;
+    padding:5px;
+}
+  .input {
+    width: 90%;
+    font-size: 14px;
+    margin-top: 20px;
+    padding:8px;
+  }
+}
+.carddetails{
+  padding-top: 10%;
+  margin-left: 300px;
+}
+.carddetails button{
+  padding:5px 20px;
 }

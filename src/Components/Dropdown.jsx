@@ -1,34 +1,25 @@
 import React from "react";
-import Card from './Card'
-import { useState } from "react";
-function Dropdown({theme,selecteditem,setSelectedItem,togglebutton,filterContinent}) {
-  const handleFilter=(e)=>{
+
+function Dropdown({ theme, selectedItem, setSelectedItem, filterContinent}) {
+  const handleFilter = (e) => {
     setSelectedItem(e.target.value);
-  } 
-   
-//  console.log(Region)
-    return (
-    <div className="dropdown">
+  };
+
+  return (
+    <div>
       <select
-        className={`${theme} ${togglebutton}`}
+     className={`input ${theme}`}
         name="countries"
         id="countries"
-        value={selecteditem}
+        value={selectedItem}
         onChange={handleFilter}
       >
-        <option value="All"> All</option>
-        {filterContinent.map((item,index) => {
-          return (
-            <option
-            key={index}
-              className={`${theme} ${togglebutton}`}
-              value={item}
-              
-            >
-              {item}
-            </option>
-          );
-        })}
+        <option value="All">All</option>
+        {filterContinent.map((item, index) => (
+          <option key={index} value={item}>
+            {item}
+          </option>
+        ))}
       </select>
     </div>
   );
