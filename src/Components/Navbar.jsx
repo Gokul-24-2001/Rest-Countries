@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
-function Navbar({ theme, togglebutton }) {
+function Navbar({ theme,toggleButton }) {
   return (
     <nav
-      className={`navbar p-3 py-xs-0 z-1 position-fixed w-100 ${theme} fs-4`}
+      className={`navbar p-3 p-xs-0 z-1 position-fixed w-100 ${theme} fs-4`}
     >
       <div className="px-5">
         <b>Where is the World?</b>
@@ -12,7 +12,7 @@ function Navbar({ theme, togglebutton }) {
       <div className="px-5 mx-sm-0 px-sm-2">
         <button
           type="button"
-          onClick={togglebutton}
+          onClick={toggleButton}
           className={`button-style ${theme}`}
         >
           <FontAwesomeIcon icon={faMoon} />

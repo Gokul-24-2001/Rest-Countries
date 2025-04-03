@@ -6,7 +6,7 @@ function Dropdown({ theme, selectedItem, setSelectedItem, filterContinent}) {
   };
 
   return (
-    <div>
+    <div className="container mt-4">
       <select
      className={`input ${theme}`}
         name="countries"

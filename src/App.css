@@ -23,6 +23,7 @@
 .dark {
   background-color: #01010af0; /* Dark background */
   color: #ffffff; 
+  transition: all.2s;
 }
 .light {
   background-color: #ffffff;  /* Light background */
@@ -82,16 +83,44 @@
     padding:5px;
 }
   .input {
-    width: 90%;
+    width: 100%;
     font-size: 14px;
     margin-top: 20px;
     padding:8px;
   }
 }
 .carddetails{
-  padding-top: 10%;
-  margin-left: 300px;
+ margin-top: -80px;
+
 }
-.carddetails button{
-  padding:5px 20px;
+.bordercountry{
+  padding: 8px 16px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+
+}
+.cardhover:hover{
+  cursor: pointer;
+}
+.search-input {
+  /* Space for the icon */
+  height: 65px;
+
+  text-align: left;
+  padding-left:40px; /* Space for the icon */
+  text-indent: 25px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 5px; /* Adjust left spacing */
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  /* gap:5px; */
+  font-size: 16px;
+  color: gray;
+  pointer-events: none; /* Prevents interaction */
 }
