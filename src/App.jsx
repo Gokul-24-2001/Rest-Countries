@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CountryDetails from "./Components/CountryDetails";
 
 function App() {
-  const [country, setCountry] = useState([]);
+  const [countries, setCountries] = useState([]); // Renamed to "countries" for clarity
   const [theme, setTheme] = useState("light");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedItem, setSelectedItem] = useState("All");
@@ -19,16 +19,16 @@ function App() {
   useEffect(() => {
     axios
       .get("https://restcountries.com/v3.1/all")
-      .then((res) => setCountry(res.data))
-      .catch((err) => console.log(err));
+      .then((res) => setCountries(res.data))
+      .catch((err) => console.log("Error fetching countries:", err));
   }, []);
 
   const toggleButton = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
-  const filteredCountries = country.filter((item) => {
-    const searchMatches = 
+  const filteredCountries = countries.filter((item) => {
+    const searchMatches =
       item.name.common.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.region?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       (item.capital &&
@@ -44,7 +44,7 @@ function App() {
 
   return (
     <Router>
-      <div className={`bg-body-secondary `}>
+      <div className={`bg-body-secondary`}>
         <Navbar theme={theme} toggleButton={toggleButton} />
         <div className="container-fluid">
           <Routes>
@@ -65,7 +65,9 @@ function App() {
                       <div className="col-12 col-sm-6">
                         <Dropdown
                           selectedItem={selectedItem}
-                          filterContinent={[...new Set(country.flatMap((c) => c.continents))]}
+                          filterContinent={[
+                            ...new Set(countries.flatMap((c) => c.continents || [])), // Added fallback for missing continents
+                          ]}
                           theme={theme}
                           toggleButton={toggleButton}
                           setSelectedItem={setSelectedItem}
@@ -77,7 +79,11 @@ function App() {
                 </>
               }
             />
-            <Route path="/country/:name" element={<CountryDetails country={country} theme={theme} />} />
+            {/* Fixed prop name from `country` to `countries` */}
+            <Route
+              path="/country/:name"
+              element={<CountryDetails countries={countries} theme={theme} />}
+            />
           </Routes>
         </div>
         <Footer />
