@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://restcountries.com/v3.1/all")
+      .get("https://restcountries.com/v3.1/all?fields=name,cca3,independent")
       .then((res) => setCountries(res.data))
       .catch((err) => console.log("Error fetching countries:", err));
   }, []);
