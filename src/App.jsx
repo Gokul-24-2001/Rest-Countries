@@ -15,13 +15,35 @@ function App() {
   const [theme, setTheme] = useState("light");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedItem, setSelectedItem] = useState("All");
+ // const urls = [
+ //    'https://restcountries.com/v3.1/independent?status=true',
+ //    'https://restcountries.com/v3.1/independent?status=false'
+ //  ];
 
-  useEffect(() => {
-    axios
-      .get("https://restcountries.com/v3.1/all")
-      .then((res) => setCountries(res.data))
-      .catch((err) => console.log("Error fetching countries:", err));
-  }, []);
+ //  useEffect(() => {
+ //    axios
+ //      .get("https://restcountries.com/v3.1/all")
+ //      .then((res) => setCountries(res.data))
+ //      .catch((err) => console.log("Error fetching countries:", err));
+ //  }, []);
+useEffect(() => {
+  const urls = [
+    'https://restcountries.com/v3.1/independent?status=true',
+    'https://restcountries.com/v3.1/independent?status=false'
+  ];
+
+  async function fetchAll() {
+    try {
+      const responses = await Promise.all(urls.map(u => axios.get(u)));
+      const combined = responses.map(r => r.data).flat();
+      setCountries(combined);
+    } catch (err) {
+      console.error("Error fetching countries:", err);
+    }
+  }
+
+  fetchAll();
+}, []);
 
   const toggleButton = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
